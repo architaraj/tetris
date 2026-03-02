@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tetris (MVP)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="title">
+          <h1>Tetris</h1>
+          <p class="subtitle">MVP — open this file in a browser and play.</p>
+        </div>
+        <div class="actions">
+          <button id="btnRestart" type="button" class="btn">Restart</button>
+          <button id="btnPause" type="button" class="btn btnSecondary">Pause (P)</button>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="gamePanel" aria-label="Tetris board">
+          <canvas id="game" width="300" height="600"></canvas>
+          <div id="overlay" class="overlay" aria-live="polite" hidden>
+            <div class="overlayCard">
+              <div id="overlayTitle" class="overlayTitle">Paused</div>
+              <div id="overlayHint" class="overlayHint">Press P to resume</div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="sidebar" aria-label="Game info">
+          <div class="card">
+            <div class="metric">
+              <div class="metricLabel">Score</div>
+              <div id="score" class="metricValue">0</div>
+            </div>
+            <div class="metric">
+              <div class="metricLabel">Lines</div>
+              <div id="lines" class="metricValue">0</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="helpTitle">Controls</div>
+            <ul class="help">
+              <li><kbd>←</kbd> / <kbd>→</kbd> move</li>
+              <li><kbd>↓</kbd> soft drop</li>
+              <li><kbd>Space</kbd> hard drop</li>
+              <li><kbd>↑</kbd> rotate</li>
+              <li><kbd>P</kbd> pause</li>
+            </ul>
+          </div>
+
+          <div class="card subtle">
+            <div class="small">
+              Tip: If your browser blocks keyboard input, click the game area once.
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./tetris.js" defer></script>
+  </body>
+</html>
